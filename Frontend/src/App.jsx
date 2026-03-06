@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import PricePrediction from "./Components/PricePrediction";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app-container">
+      <header className="app-header">
+        <div className="header-content">
+          <h1 className="app-title">🏡 House Price Predictor</h1>
+          <p className="app-tagline">AI-Powered Real Estate Valuation</p>
+        </div>
+      </header>
+
+      <main className="app-main">
+        <section className="intro-section">
+          <h2>Get Accurate Price Predictions</h2>
+          <p>
+            Use our advanced machine learning model to predict house prices
+            based on key factors like area, number of bedrooms, and bathrooms.
+          </p>
+          <div className="features-grid">
+            <div className="feature-card">
+              <span className="feature-icon">📊</span>
+              <h3>Accurate Predictions</h3>
+              <p>ML-based predictions trained on real market data</p>
+            </div>
+            <div className="feature-card">
+              <span className="feature-icon">⚡</span>
+              <h3>Instant Results</h3>
+              <p>Get predictions in seconds</p>
+            </div>
+            <div className="feature-card">
+              <span className="feature-icon">🎯</span>
+              <h3>Simple to Use</h3>
+              <p>Enter basic property details and get started</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="predictor-section">
+          <PricePrediction />
+        </section>
+      </main>
+
+      <footer className="app-footer">
+        <p>&copy; 2024 House Price Predictor. All rights reserved.</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
