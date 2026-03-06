@@ -1,60 +1,87 @@
-🏠 House Price Prediction System
 
-A full-stack machine learning project that predicts house prices based on property features such as area, number of bedrooms, and number of bathrooms.
 
-The system integrates Machine Learning (Python) with a Node.js backend and a React frontend, demonstrating how ML models can be deployed as APIs and consumed by web applications.
+```
+# 🏠 House Price Prediction System
 
-🚀 Features
+A **full-stack machine learning application** that predicts house prices based on property features such as **area, bedrooms, and bathrooms**.
 
-Predict house price using Linear Regression
+This project demonstrates how a **machine learning model can be deployed as an API and integrated into a full-stack web application** using **React, Express, and Flask**.
 
-Machine Learning model served using Flask API
+---
 
-Express.js backend to handle API communication
+## 🚀 Features
 
-React frontend for user interaction
+- Predict house prices using **Linear Regression**
+- Machine Learning model served via **Flask API**
+- **Express.js backend** for API communication
+- **React frontend** for user interaction
+- Real-time prediction results
+- Clean **microservice architecture**
 
-Real-time price prediction
+---
 
-Clean microservice architecture
+## 🧠 Machine Learning Model
 
-🧠 Machine Learning Model
+The model uses **Linear Regression** from **scikit-learn**.
 
-The project uses Linear Regression from scikit-learn.
+### Input Features
 
-Input Features
+| Feature | Description |
+|------|------|
+| Area | Size of the house (sq ft) |
+| Bedrooms | Number of bedrooms |
+| Bathrooms | Number of bathrooms |
 
-Area (square feet)
+### Output
 
-Bedrooms
+Predicted house price.
 
-Bathrooms
+Example:
 
-Output
+```
 
-Predicted house price
-
-Example Input:
-
+Input
 Area: 1200
 Bedrooms: 3
 Bathrooms: 2
 
-Example Output:
-
+Output
 Predicted Price: ₹58,00,000
 
-🏗️ Project Architecture
+```
+
+---
+
+## 🏗️ System Architecture
+
+```
 
 React Frontend
-      ↓
-Express Backend API
-      ↓
+│
+▼
+Express Backend
+│
+▼
 Flask ML API
-      ↓
+│
+▼
 Linear Regression Model
 
-📂 Project Structure
+```
+
+### Request Flow
+
+1. User enters house details in the React UI
+2. React sends request to Express API
+3. Express forwards request to Flask ML API
+4. Flask runs `model.predict()`
+5. Prediction is returned to the frontend
+
+---
+
+## 📂 Project Structure
+
+```
 
 House-Price-Prediction
 │
@@ -82,146 +109,204 @@ House-Price-Prediction
 │
 └── README.md
 
-🛠️ Tech Stack
-Frontend
+````
 
-React
+---
 
-JavaScript
+## 🛠️ Tech Stack
 
-CSS
+### Frontend
+- React
+- JavaScript
+- CSS
 
-Backend
+### Backend
+- Node.js
+- Express.js
+- Fetch API
 
-Node.js
+### Machine Learning
+- Python
+- Flask
+- Scikit-learn
+- Pandas
+- Joblib
 
-Express.js
+---
 
-Fetch API
+## ⚙️ Installation & Setup
 
-Machine Learning
+### 1️⃣ Clone Repository
 
-Python
-
-Flask
-
-Scikit-learn
-
-Pandas
-
-Joblib
-
-⚙️ Installation & Setup
-1️⃣ Clone Repository
+```bash
 git clone https://github.com/yourusername/house-price-prediction.git
 cd house-price-prediction
-2️⃣ Setup Machine Learning API
+````
 
-Navigate to ML folder:
+---
 
+### 2️⃣ Setup Machine Learning API
+
+Navigate to ML folder
+
+```bash
 cd ML
+```
 
-Create virtual environment:
+Create virtual environment
 
+```bash
 python -m venv venv
+```
 
-Activate environment:
+Activate environment
 
+```bash
 venv\Scripts\activate
+```
 
-Install dependencies:
+Install dependencies
 
+```bash
 pip install flask pandas scikit-learn joblib
+```
 
-Run ML API:
+Run ML API
 
+```bash
 python ml_api.py
+```
 
-Server runs at:
+Server runs on:
 
+```
 http://127.0.0.1:3000
-3️⃣ Setup Backend (Express)
+```
 
-Navigate to backend folder:
+---
 
+### 3️⃣ Setup Backend
+
+Navigate to backend
+
+```bash
 cd backend
+```
 
-Install dependencies:
+Install dependencies
 
+```bash
 npm install
+```
 
-Run server:
+Run server
 
+```bash
 npm run server
+```
 
-Server runs at:
+Server runs on:
 
+```
 http://localhost:8000
-4️⃣ Setup Frontend
+```
 
-Navigate to frontend:
+---
 
+### 4️⃣ Setup Frontend
+
+Navigate to frontend
+
+```bash
 cd frontend
+```
 
-Install dependencies:
+Install dependencies
 
+```bash
 npm install
+```
 
-Run development server:
+Run development server
 
+```bash
 npm run dev
+```
 
-Frontend runs at:
+Frontend runs on:
 
+```
 http://localhost:5173
-📡 API Endpoint
-Predict House Price
+```
+
+---
+
+## 📡 API Endpoint
+
+### Predict House Price
+
+```
 POST /api/predict
+```
 
-Request Body:
+### Request
 
+```json
 {
- "area": 1200,
- "bedrooms": 3,
- "bathrooms": 2
+  "area": 1200,
+  "bedrooms": 3,
+  "bathrooms": 2
 }
+```
 
-Response:
+### Response
 
+```json
 {
- "predicted_price": 5800000
+  "predicted_price": 5800000
 }
-📊 Example Output
+```
+
+---
+
+## 📊 Example Output
+
+```
 Predicted Price: ₹58,00,000
+```
 
-Displayed in Indian currency format using:
+Displayed using:
 
+```javascript
 prediction.toLocaleString("en-IN")
-📌 Learning Outcomes
+```
+
+---
+
+## 📌 Learning Outcomes
 
 This project demonstrates:
 
-ML model deployment
+* ML model deployment
+* Backend ↔ ML API communication
+* API integration with frontend
+* Full-stack ML architecture
+* Microservice-based design
 
-Backend–ML communication
+---
 
-API integration
+## 🔮 Future Improvements
 
-Full stack ML architecture
+* Add more features (location, parking, house age)
+* Use advanced models (Random Forest / XGBoost)
+* Deploy ML API using Docker
+* Add database for prediction history
 
-Microservice design
+---
 
-🔮 Future Improvements
+## 👨‍💻 Author
 
-Add more features (location, parking, house age)
-
-Use advanced models (Random Forest / XGBoost)
-
-Deploy ML API using Docker
-
-Add database for storing predictions
-
-👨‍💻 Author
-
-Rushikesh Landge
+**Rushikesh Landge**
 Computer Science Engineering Student
+
+```
