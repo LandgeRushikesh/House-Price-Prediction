@@ -11,20 +11,20 @@ model = joblib.load("model.pkl")
 print("model Loaded Successfully...")
 
 # Api route for prediction
-@app.route('/predict',methods=["POSt"])
+@app.route('/predict',methods=["POST"])
 def predict():
     # Get JSON data from request
     data = request.json
 
-    area = data['area']
-    bedrooms = data['bedrooms']
-    bathrooms = data['bathrooms']
+    area = float(data['area'])
+    bedrooms = int(data['bedrooms'])
+    bathrooms = int(data['bathrooms'])
 
     # Convert input to dataframe
-    ip_data = pd.DataFrame([["area","bedrooms","bathrooms"]],columns=["area","bedrooms","bathrooms"])
+    ip_data = pd.DataFrame([[area,bedrooms,bathrooms]],columns=["area","bedrooms","bathrooms"])
 
     # make Prediction
-    prediction = model.predict([[ip_data]])
+    prediction = model.predict(ip_data)
 
     return jsonify({
         "Predicted price":prediction[0]
